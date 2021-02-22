@@ -1,7 +1,7 @@
 {
     "name": "@x-drive/flexible",
     "version": "1.0.0",
-    "description": "页端设置基本字体大小的 flexible 模块",
+    "description": "页端设置基本字体大小模块",
     "author": "digiaries <digiaries@hotmail.com>",
     "license": "MIT",
     "main": "dist/index.js",
