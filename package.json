@@ -16,7 +16,8 @@
     },
     "scripts": {
         "build": "rollup -c",
-        "dev": "rollup -c -w"
+        "dev": "rollup -c -w",
+        "changelog": "changelog"
     },
     "bugs": {
         "url": "https://github.com/x-dirve/flexible/issues"
