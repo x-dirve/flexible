@@ -1,7 +1,7 @@
 {
     "name": "@x-drive/flexible",
     "version": "1.0.0",
-    "description": "页端设置基本字体大小模块",
+    "description": "用于配合 postcss-pxtorem 等模块实现自适应布局的页端模块",
     "author": "digiaries <digiaries@hotmail.com>",
     "license": "MIT",
     "main": "dist/index.js",
@@ -27,7 +27,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@x-drive/changelog": "1.1.3",
+        "@x-drive/changelog": "1.1.5",
         "@babel/cli": "7.10.5",
         "@babel/core": "7.11.1",
         "@babel/preset-env": "7.11.0",
