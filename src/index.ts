@@ -37,8 +37,8 @@ const WINDOW_WIDTH_KEY = "WINDOW_WIDTH";
  * 生成当前项目的特征 key
  * @param key 标识
  */
-function buildStigma(key:string, raw:boolean) {
-    Stigma = `FLEXIBLE_${ raw  ? key : typeof (window.btoa) === "function" ? btoa(key) : key}_${WINDOW_WIDTH_KEY}`;
+function buildStigma(key: string, raw: boolean) {
+    Stigma = `FLEXIBLE_${raw ? key : typeof (window.btoa) === "function" ? btoa(key) : key}_${WINDOW_WIDTH_KEY}`;
 }
 
 /**设置 meta */
@@ -131,7 +131,7 @@ function refreshRem() {
 }
 
 /**设置相关事件监听逻辑 */
-function setEventListener() {
+function setEventListener(size = 12) {
     window.addEventListener("resize", function () {
         clearTimeout(tid);
         tid = setTimeout(refreshRem, 300);
@@ -144,10 +144,10 @@ function setEventListener() {
     }, false);
 
     if (doc.readyState === "complete") {
-        doc.body.style.fontSize = `${12 * dpr}px`;
+        doc.body.style.fontSize = `${size * dpr}px`;
     } else {
         doc.addEventListener("DOMContentLoaded", function () {
-            doc.body.style.fontSize = `${12 * dpr}px`;
+            doc.body.style.fontSize = `${size * dpr}px`;
         }, false);
     }
 }
@@ -156,10 +156,11 @@ export { flexible }
 
 /**
  * 初始化
- * @param s 项目标识，用于防止同域下的项目互相覆盖
- * @param raw 是否将标识直接用于生成模块特征
+ * @param s    项目标识，用于防止同域下的项目互相覆盖
+ * @param raw  是否将标识直接用于生成模块特征
+ * @param size 基准字体大小
  */
-export default function init(s?:string, raw:boolean = false) {
+export default function init(s?: string, raw: boolean = false, size?: number) {
     if (inited) {
         log("已初始化完成，相关操作请调用 flexible 对象完成");
         return;
@@ -172,7 +173,7 @@ export default function init(s?:string, raw:boolean = false) {
 
     setMetaAttr();
 
-    setEventListener();
+    setEventListener(size);
 
     refreshRem();
 

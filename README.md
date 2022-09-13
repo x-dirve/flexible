@@ -19,3 +19,9 @@
     import flexible from "@x-drive/flexible";
     flexible("PROJECT_ONE", true); // localStorage 中的储存 key 为：FLEXIBLE_PROJECT_ONE_WINDOW_WIDTH
     ```
+- 设置默认字体大小
+    `flexible` 提供了第三个参数用于设置默认的字体大小（默认为 12）
+    ```js
+    // 第二个参数按照实际需求设置即可
+    flexible("PROJECT_ONE", true, 14);
+    ```

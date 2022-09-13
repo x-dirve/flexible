@@ -1,6 +1,6 @@
 {
     "name": "@x-drive/flexible",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "用于配合 postcss-pxtorem 等模块实现自适应布局的页端模块",
     "author": "digiaries <digiaries@hotmail.com>",
     "license": "MIT",
